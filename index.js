@@ -384,6 +384,7 @@ export default class Drawer extends Component {
   };
 
   open = (type, cb) => {
+    console.log('OPNENNNN  !!!!!')
     let start = this._length
     let end = this.getOpenLength()
 
