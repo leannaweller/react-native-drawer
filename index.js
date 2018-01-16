@@ -139,6 +139,7 @@ export default class Drawer extends Component {
     if (this._syncAfterUpdate) {
       this._syncAfterUpdate = false
       this._open ? this.open('force') : this.close('force')
+      this._activeTween = null
     }
   }
 
@@ -409,7 +410,6 @@ export default class Drawer extends Component {
         this.adjustForCaptureGestures()
         this.props.onOpen()
         this.clearInteractionHandle()
-
         if(typeof type === 'function') {
           type() // this is actually a callback
         } else cb && cb()
@@ -421,7 +421,7 @@ export default class Drawer extends Component {
   close = (type, cb) => {
     let start = this._length
     let end = this.getClosedLength()
-
+    console.log('CLOSEEE  !!!!!')
     if (this._activeTween) return
     if (type !== 'force' && start - end === 0 && this._open === false) return // do nothing if the delta is 0
 
