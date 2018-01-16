@@ -137,7 +137,7 @@ export default class Drawer extends Component {
   componentDidUpdate() {
     if (this._syncAfterUpdate) {
       this._syncAfterUpdate = false
-      this._open ? this.open('force') : this.close('force')
+      // this._open ? this.open('force') : this.close('force')
     }
   }
 
