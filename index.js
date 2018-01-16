@@ -128,9 +128,10 @@ export default class Drawer extends Component {
   componentWillReceiveProps(nextProps) {
     if (this.requiresResync(nextProps)) this.resync(null, nextProps)
 
-    if (nextProps.open !== null && this._open !== nextProps._open) {
+    if (nextProps.open !== null && this._open !== nextProps.open) {
+      console.log('IS OPEN', this._open, nextProps.open)
       this._syncAfterUpdate = true
-      // this._open = nextProps.open
+      this._open = nextProps.open
     }
   }
 
